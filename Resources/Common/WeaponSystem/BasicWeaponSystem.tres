@@ -1,0 +1,10 @@
+[gd_resource type="Resource" load_steps=2 format=2]
+
+[ext_resource path="res://Scripts/Abstracts/ResourceTemplate/WeaponSystemResource.gd" type="Script" id=1]
+
+[resource]
+script = ExtResource( 1 )
+Rarity = 0
+IsUnlocked = false
+primary_weapon_max_capacity = 120.0
+PrimaryWeaponSwitchDuration = 1.5

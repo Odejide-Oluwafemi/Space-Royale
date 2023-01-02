@@ -1,0 +1,16 @@
+[gd_scene load_steps=3 format=2]
+
+[ext_resource path="res://Scripts/Abstracts/Weapon.gd" type="Script" id=1]
+[ext_resource path="res://Resources/Common/Weapon/GatlingGun.tres" type="Resource" id=2]
+
+[node name="Weapon" type="Node2D"]
+script = ExtResource( 1 )
+data = ExtResource( 2 )
+
+[node name="ShootTimer" type="Timer" parent="."]
+
+[node name="ReloadTimer" type="Timer" parent="."]
+one_shot = true
+
+[connection signal="timeout" from="ShootTimer" to="." method="_on_ShootTimer_timeout"]
+[connection signal="timeout" from="ReloadTimer" to="." method="_on_ReloadTimer_timeout"]

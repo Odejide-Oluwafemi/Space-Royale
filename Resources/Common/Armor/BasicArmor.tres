@@ -1,0 +1,12 @@
+[gd_resource type="Resource" load_steps=2 format=2]
+
+[ext_resource path="res://Scripts/Abstracts/ResourceTemplate/ArmorResource.gd" type="Script" id=1]
+
+[resource]
+script = ExtResource( 1 )
+Rarity = 0
+IsUnlocked = false
+max_armor = 4100.0
+regenerate_speed = 1.5
+regen_inactive_time = 3.0
+regen_value = 25.0

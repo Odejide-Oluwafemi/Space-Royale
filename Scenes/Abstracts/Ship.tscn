@@ -1,0 +1,54 @@
+[gd_scene load_steps=7 format=2]
+
+[ext_resource path="res://Scenes/Abstracts/WeaponSystem.tscn" type="PackedScene" id=1]
+[ext_resource path="res://Scripts/Abstracts/Ship.gd" type="Script" id=2]
+[ext_resource path="res://Scenes/Abstracts/Engine.tscn" type="PackedScene" id=3]
+[ext_resource path="res://Scenes/Abstracts/Armor.tscn" type="PackedScene" id=4]
+[ext_resource path="res://icon.png" type="Texture" id=5]
+
+[sub_resource type="RectangleShape2D" id=1]
+extents = Vector2( 32, 32 )
+
+[node name="Ship" type="KinematicBody2D"]
+script = ExtResource( 2 )
+__meta__ = {
+"_edit_group_": true
+}
+EngineNode = NodePath("Components/Engine")
+ArmorNode = NodePath("Components/Armor")
+WeaponSystemNode = NodePath("Components/WeaponSystem")
+SpriteNode = NodePath("Sprite")
+
+[node name="Sprite" type="Sprite" parent="."]
+texture = ExtResource( 5 )
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource( 1 )
+
+[node name="Camera2D" type="Camera2D" parent="."]
+current = true
+zoom = Vector2( 1.4, 1.4 )
+process_mode = 0
+smoothing_enabled = true
+smoothing_speed = 12.0
+drag_margin_left = 0.3
+drag_margin_top = 0.3
+drag_margin_right = 0.3
+drag_margin_bottom = 0.3
+editor_draw_drag_margin = true
+
+[node name="BulletSpawnPoint" type="Position2D" parent="."]
+scale = Vector2( 2, 2 )
+
+[node name="FRONT(DELETE)" type="Sprite" parent="BulletSpawnPoint"]
+position = Vector2( 27, 0 )
+scale = Vector2( 0.25, 0.25 )
+texture = ExtResource( 5 )
+
+[node name="Components" type="Node" parent="."]
+
+[node name="Armor" parent="Components" instance=ExtResource( 4 )]
+
+[node name="Engine" parent="Components" instance=ExtResource( 3 )]
+
+[node name="WeaponSystem" parent="Components" instance=ExtResource( 1 )]

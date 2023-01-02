@@ -1,0 +1,13 @@
+[gd_resource type="Resource" load_steps=2 format=2]
+
+[ext_resource path="res://Scripts/Abstracts/ResourceTemplate/BulletResource.gd" type="Script" id=1]
+
+[resource]
+script = ExtResource( 1 )
+Rarity = 0
+IsUnlocked = false
+isHoming = false
+TravelSpeed = 3000.0
+Damage = 45.0
+Mass = 0.1
+LengthOrDuration = 3.0
