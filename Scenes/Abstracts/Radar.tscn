@@ -1,0 +1,48 @@
+[gd_scene load_steps=4 format=2]
+
+[ext_resource path="res://Scripts/Abstracts/Radar.gd" type="Script" id=1]
+[ext_resource path="res://Scripts/Minimap.gd" type="Script" id=3]
+[ext_resource path="res://icon.png" type="Texture" id=4]
+
+[node name="Radar" type="Node2D"]
+script = ExtResource( 1 )
+__meta__ = {
+"_edit_horizontal_guides_": [ 64.0 ]
+}
+ScanAreaNode = NodePath("ScanArea")
+ScanAreaCollisionNode = NodePath("ScanArea/CollisionShape2D")
+
+[node name="ScanArea" type="Area2D" parent="."]
+collision_layer = 0
+collision_mask = 2
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="ScanArea"]
+
+[node name="CanvasLayer" type="CanvasLayer" parent="."]
+
+[node name="Minimap" type="ViewportContainer" parent="CanvasLayer"]
+margin_left = 1576.0
+margin_top = 72.0
+margin_right = 1896.0
+margin_bottom = 336.0
+stretch = true
+script = ExtResource( 3 )
+
+[node name="Viewport" type="Viewport" parent="CanvasLayer/Minimap"]
+size = Vector2( 320, 300 )
+handle_input_locally = false
+render_target_update_mode = 3
+
+[node name="Camera2D" type="Camera2D" parent="CanvasLayer/Minimap/Viewport"]
+rotating = true
+current = true
+zoom = Vector2( 15, 15 )
+
+[node name="Sprite" type="Sprite" parent="CanvasLayer/Minimap/Viewport"]
+position = Vector2( 1576, 72 )
+texture = ExtResource( 4 )
+
+[connection signal="area_entered" from="ScanArea" to="." method="_on_Area_Entered"]
+[connection signal="area_exited" from="ScanArea" to="." method="_on_Area_Exited"]
+[connection signal="body_entered" from="ScanArea" to="." method="_on_Body_Entered"]
+[connection signal="body_exited" from="ScanArea" to="." method="_on_Body_Exited"]

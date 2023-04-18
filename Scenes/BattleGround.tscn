@@ -1,0 +1,440 @@
+[gd_scene load_steps=8 format=2]
+
+[ext_resource path="res://Scripts/UI.gd" type="Script" id=1]
+[ext_resource path="res://Scripts/BattleGround.gd" type="Script" id=2]
+[ext_resource path="res://icon.png" type="Texture" id=3]
+[ext_resource path="res://Scenes/SafeZoneArea.tscn" type="PackedScene" id=4]
+[ext_resource path="res://Assets/Sounds/e.ogg" type="AudioStream" id=5]
+[ext_resource path="res://Scripts/PauseMenu.gd" type="Script" id=6]
+[ext_resource path="res://Styles/HUDFont.tres" type="DynamicFont" id=11]
+
+[node name="BattleGround" type="Node2D"]
+script = ExtResource( 2 )
+__meta__ = {
+"_edit_lock_": true
+}
+
+[node name="CanvasLayer" type="CanvasLayer" parent="."]
+
+[node name="Background" type="ParallaxBackground" parent="CanvasLayer"]
+
+[node name="Back" type="ParallaxLayer" parent="CanvasLayer/Background"]
+motion_scale = Vector2( 6, 6 )
+motion_mirroring = Vector2( 2800, 2000 )
+__meta__ = {
+"_edit_group_": true,
+"_edit_lock_": true
+}
+
+[node name="Sprite" type="Sprite" parent="CanvasLayer/Background/Back"]
+position = Vector2( -248, 424 )
+scale = Vector2( 0.1, 0.1 )
+texture = ExtResource( 3 )
+
+[node name="Sprite2" type="Sprite" parent="CanvasLayer/Background/Back"]
+position = Vector2( 1538.6, 520.6 )
+scale = Vector2( 0.1, 0.1 )
+texture = ExtResource( 3 )
+
+[node name="Sprite3" type="Sprite" parent="CanvasLayer/Background/Back"]
+position = Vector2( 1419, 254 )
+scale = Vector2( 0.1, 0.1 )
+texture = ExtResource( 3 )
+
+[node name="Sprite4" type="Sprite" parent="CanvasLayer/Background/Back"]
+position = Vector2( 560, 907 )
+scale = Vector2( 0.1, 0.1 )
+texture = ExtResource( 3 )
+
+[node name="Sprite5" type="Sprite" parent="CanvasLayer/Background/Back"]
+position = Vector2( 777.6, -102.4 )
+scale = Vector2( 0.1, 0.1 )
+texture = ExtResource( 3 )
+
+[node name="Sprite6" type="Sprite" parent="CanvasLayer/Background/Back"]
+position = Vector2( 1362.6, -127.4 )
+scale = Vector2( 0.1, 0.1 )
+texture = ExtResource( 3 )
+
+[node name="Sprite7" type="Sprite" parent="CanvasLayer/Background/Back"]
+position = Vector2( 225, 300 )
+scale = Vector2( 0.1, 0.1 )
+texture = ExtResource( 3 )
+
+[node name="Sprite8" type="Sprite" parent="CanvasLayer/Background/Back"]
+position = Vector2( 3.60001, 225.6 )
+scale = Vector2( 0.1, 0.1 )
+texture = ExtResource( 3 )
+
+[node name="Sprite9" type="Sprite" parent="CanvasLayer/Background/Back"]
+position = Vector2( 1857, 889 )
+scale = Vector2( 0.1, 0.1 )
+texture = ExtResource( 3 )
+
+[node name="Sprite10" type="Sprite" parent="CanvasLayer/Background/Back"]
+position = Vector2( 155, 803 )
+scale = Vector2( 0.1, 0.1 )
+texture = ExtResource( 3 )
+
+[node name="Sprite11" type="Sprite" parent="CanvasLayer/Background/Back"]
+position = Vector2( -242, 810 )
+scale = Vector2( 0.1, 0.1 )
+texture = ExtResource( 3 )
+
+[node name="Sprite12" type="Sprite" parent="CanvasLayer/Background/Back"]
+position = Vector2( 1992, 202 )
+scale = Vector2( 0.1, 0.1 )
+texture = ExtResource( 3 )
+
+[node name="Sprite13" type="Sprite" parent="CanvasLayer/Background/Back"]
+position = Vector2( 730.6, 1144.6 )
+scale = Vector2( 0.1, 0.1 )
+texture = ExtResource( 3 )
+
+[node name="Sprite14" type="Sprite" parent="CanvasLayer/Background/Back"]
+position = Vector2( 689, 427 )
+scale = Vector2( 0.1, 0.1 )
+texture = ExtResource( 3 )
+
+[node name="Sprite15" type="Sprite" parent="CanvasLayer/Background/Back"]
+position = Vector2( 1649.6, -353.4 )
+scale = Vector2( 0.1, 0.1 )
+texture = ExtResource( 3 )
+
+[node name="Sprite16" type="Sprite" parent="CanvasLayer/Background/Back"]
+position = Vector2( 1873, -17 )
+scale = Vector2( 0.1, 0.1 )
+texture = ExtResource( 3 )
+
+[node name="Sprite17" type="Sprite" parent="CanvasLayer/Background/Back"]
+position = Vector2( 1211, 810 )
+scale = Vector2( 0.1, 0.1 )
+texture = ExtResource( 3 )
+
+[node name="Sprite18" type="Sprite" parent="CanvasLayer/Background/Back"]
+position = Vector2( 465.6, -302.4 )
+scale = Vector2( 0.1, 0.1 )
+texture = ExtResource( 3 )
+
+[node name="Sprite19" type="Sprite" parent="CanvasLayer/Background/Back"]
+position = Vector2( 2053, 705 )
+scale = Vector2( 0.1, 0.1 )
+texture = ExtResource( 3 )
+
+[node name="Sprite20" type="Sprite" parent="CanvasLayer/Background/Back"]
+position = Vector2( 525, 1170 )
+scale = Vector2( 0.1, 0.1 )
+texture = ExtResource( 3 )
+
+[node name="Sprite21" type="Sprite" parent="CanvasLayer/Background/Back"]
+position = Vector2( 848, 2269 )
+scale = Vector2( 0.1, 0.1 )
+texture = ExtResource( 3 )
+
+[node name="Sprite22" type="Sprite" parent="CanvasLayer/Background/Back"]
+position = Vector2( 1247, 1628 )
+scale = Vector2( 0.1, 0.1 )
+texture = ExtResource( 3 )
+
+[node name="UI" type="Control" parent="CanvasLayer"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+mouse_filter = 2
+script = ExtResource( 1 )
+__meta__ = {
+"_edit_group_": true,
+"_edit_lock_": true,
+"_edit_use_anchors_": true
+}
+BattleGroundNode = NodePath("../..")
+HealthLabelNode = NodePath("ShipStats/Health/HealthValue")
+ArmorLabelNode = NodePath("ShipStats/Armor/ArmorValue")
+KillsLabelNode = NodePath("ShipStats/Kills/KillsValue")
+PrimaryWeaponThumbnailNode = NodePath("WeaponStats/PrimaryWeaponStats/PrimaryWeaponThumbnail")
+PrimaryWeaponAmmoInGunLabelNode = NodePath("WeaponStats/PrimaryWeaponStats/PrimaryWeaponAmmoInGunLabel")
+PrimaryWeaponAmmoInHandLabelNode = NodePath("WeaponStats/PrimaryWeaponStats/PrimaryWeaponAmmoInHandLabel")
+SecondaryWeaponThumbnailNode = NodePath("WeaponStats/SecondaryWeaponStats/SecondaryWeaponThumbnail")
+SecondaryWeaponAmmoLabelNode = NodePath("WeaponStats/SecondaryWeaponStats/SecondaryWeaponAmmoLabel")
+SpecialSkillProgressBarNode = NodePath("WeaponStats/SpecialSkillStats/SpecialSkillProgressBar")
+
+[node name="ShipStats" type="HBoxContainer" parent="CanvasLayer/UI"]
+anchor_right = 1.0
+margin_left = 10.0
+margin_top = 13.0
+margin_right = -10.0
+margin_bottom = 71.0
+mouse_filter = 2
+size_flags_horizontal = 3
+custom_constants/separation = 5
+alignment = 1
+__meta__ = {
+"_edit_use_anchors_": true
+}
+
+[node name="Health" type="HBoxContainer" parent="CanvasLayer/UI/ShipStats"]
+margin_right = 630.0
+margin_bottom = 58.0
+size_flags_horizontal = 3
+custom_constants/separation = 11
+alignment = 1
+
+[node name="HealthLabel" type="Label" parent="CanvasLayer/UI/ShipStats/Health"]
+margin_left = 243.0
+margin_right = 376.0
+margin_bottom = 58.0
+size_flags_vertical = 1
+custom_fonts/font = ExtResource( 11 )
+text = "Health:"
+align = 1
+valign = 1
+uppercase = true
+
+[node name="HealthValue" type="Label" parent="CanvasLayer/UI/ShipStats/Health"]
+margin_left = 387.0
+margin_right = 387.0
+margin_bottom = 58.0
+size_flags_vertical = 1
+custom_fonts/font = ExtResource( 11 )
+align = 1
+valign = 1
+uppercase = true
+
+[node name="Armor" type="HBoxContainer" parent="CanvasLayer/UI/ShipStats"]
+margin_left = 635.0
+margin_right = 1265.0
+margin_bottom = 58.0
+size_flags_horizontal = 3
+custom_constants/separation = 11
+alignment = 1
+
+[node name="ArmorLabel" type="Label" parent="CanvasLayer/UI/ShipStats/Armor"]
+margin_left = 250.0
+margin_right = 369.0
+margin_bottom = 58.0
+size_flags_vertical = 1
+custom_fonts/font = ExtResource( 11 )
+text = "Armor:"
+align = 1
+valign = 1
+uppercase = true
+
+[node name="ArmorValue" type="Label" parent="CanvasLayer/UI/ShipStats/Armor"]
+margin_left = 380.0
+margin_right = 380.0
+margin_bottom = 58.0
+size_flags_vertical = 1
+custom_fonts/font = ExtResource( 11 )
+align = 1
+valign = 1
+uppercase = true
+
+[node name="Kills" type="HBoxContainer" parent="CanvasLayer/UI/ShipStats"]
+margin_left = 1270.0
+margin_right = 1900.0
+margin_bottom = 58.0
+size_flags_horizontal = 3
+custom_constants/separation = 11
+alignment = 1
+
+[node name="KillsLabel" type="Label" parent="CanvasLayer/UI/ShipStats/Kills"]
+margin_left = 260.0
+margin_right = 358.0
+margin_bottom = 58.0
+size_flags_vertical = 1
+custom_fonts/font = ExtResource( 11 )
+text = "Kills:"
+align = 1
+valign = 1
+uppercase = true
+
+[node name="KillsValue" type="Label" parent="CanvasLayer/UI/ShipStats/Kills"]
+margin_left = 369.0
+margin_right = 369.0
+margin_bottom = 58.0
+size_flags_vertical = 1
+custom_fonts/font = ExtResource( 11 )
+align = 1
+valign = 1
+uppercase = true
+
+[node name="WeaponStats" type="HBoxContainer" parent="CanvasLayer/UI"]
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_top = -80.0
+alignment = 1
+
+[node name="SecondaryWeaponStats" type="HBoxContainer" parent="CanvasLayer/UI/WeaponStats"]
+margin_right = 637.0
+margin_bottom = 80.0
+grow_vertical = 0
+rect_min_size = Vector2( 200, 80 )
+size_flags_horizontal = 3
+custom_constants/separation = 4
+alignment = 1
+
+[node name="SecondaryWeaponThumbnail" type="TextureRect" parent="CanvasLayer/UI/WeaponStats/SecondaryWeaponStats"]
+margin_left = 273.0
+margin_right = 337.0
+margin_bottom = 80.0
+texture = ExtResource( 3 )
+stretch_mode = 6
+
+[node name="Divider" type="Label" parent="CanvasLayer/UI/WeaponStats/SecondaryWeaponStats"]
+margin_left = 341.0
+margin_top = 18.0
+margin_right = 359.0
+margin_bottom = 61.0
+custom_fonts/font = ExtResource( 11 )
+text = "x"
+
+[node name="SecondaryWeaponAmmoLabel" type="Label" parent="CanvasLayer/UI/WeaponStats/SecondaryWeaponStats"]
+margin_left = 363.0
+margin_top = 18.0
+margin_right = 363.0
+margin_bottom = 61.0
+custom_fonts/font = ExtResource( 11 )
+
+[node name="SpecialSkillStats" type="CenterContainer" parent="CanvasLayer/UI/WeaponStats"]
+margin_left = 641.0
+margin_right = 1278.0
+margin_bottom = 80.0
+size_flags_horizontal = 3
+
+[node name="SpecialSkillProgressBar" type="TextureProgress" parent="CanvasLayer/UI/WeaponStats/SpecialSkillStats"]
+margin_left = 286.0
+margin_top = 8.0
+margin_right = 350.0
+margin_bottom = 72.0
+grow_horizontal = 2
+grow_vertical = 0
+rect_min_size = Vector2( 64, 64 )
+size_flags_horizontal = 7
+step = 0.1
+value = 1.0
+texture_under = ExtResource( 3 )
+texture_progress = ExtResource( 3 )
+fill_mode = 4
+tint_under = Color( 0, 0.188235, 0.0117647, 1 )
+tint_over = Color( 1, 0.00784314, 0.00784314, 1 )
+tint_progress = Color( 0, 1, 0.0627451, 1 )
+
+[node name="PrimaryWeaponStats" type="HBoxContainer" parent="CanvasLayer/UI/WeaponStats"]
+margin_left = 1282.0
+margin_right = 1920.0
+margin_bottom = 80.0
+grow_horizontal = 0
+grow_vertical = 0
+rect_min_size = Vector2( 200, 80 )
+size_flags_horizontal = 3
+custom_constants/separation = 4
+alignment = 1
+__meta__ = {
+"_edit_use_anchors_": true
+}
+
+[node name="PrimaryWeaponThumbnail" type="TextureRect" parent="CanvasLayer/UI/WeaponStats/PrimaryWeaponStats"]
+margin_left = 273.0
+margin_right = 337.0
+margin_bottom = 80.0
+texture = ExtResource( 3 )
+stretch_mode = 6
+
+[node name="PrimaryWeaponAmmoInGunLabel" type="Label" parent="CanvasLayer/UI/WeaponStats/PrimaryWeaponStats"]
+margin_left = 341.0
+margin_top = 18.0
+margin_right = 341.0
+margin_bottom = 61.0
+custom_fonts/font = ExtResource( 11 )
+
+[node name="Divider" type="Label" parent="CanvasLayer/UI/WeaponStats/PrimaryWeaponStats"]
+margin_left = 345.0
+margin_top = 18.0
+margin_right = 360.0
+margin_bottom = 61.0
+custom_fonts/font = ExtResource( 11 )
+text = "/"
+
+[node name="PrimaryWeaponAmmoInHandLabel" type="Label" parent="CanvasLayer/UI/WeaponStats/PrimaryWeaponStats"]
+margin_left = 364.0
+margin_top = 18.0
+margin_right = 364.0
+margin_bottom = 61.0
+custom_fonts/font = ExtResource( 11 )
+
+[node name="PauseMenu" type="Control" parent="CanvasLayer"]
+pause_mode = 2
+process_priority = 2
+visible = false
+anchor_right = 1.0
+anchor_bottom = 1.0
+script = ExtResource( 6 )
+
+[node name="VBoxContainer" type="VBoxContainer" parent="CanvasLayer/PauseMenu"]
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+margin_left = -20.0
+margin_top = -20.0
+margin_right = 20.0
+margin_bottom = 20.0
+grow_horizontal = 2
+grow_vertical = 2
+custom_constants/separation = 15
+alignment = 1
+
+[node name="Resume" type="Button" parent="CanvasLayer/PauseMenu/VBoxContainer"]
+pause_mode = 2
+margin_right = 300.0
+margin_bottom = 80.0
+grow_horizontal = 2
+grow_vertical = 2
+rect_min_size = Vector2( 300, 80 )
+mouse_default_cursor_shape = 2
+text = "Resume"
+
+[node name="Main Menu" type="Button" parent="CanvasLayer/PauseMenu/VBoxContainer"]
+margin_top = 95.0
+margin_right = 300.0
+margin_bottom = 175.0
+grow_horizontal = 2
+grow_vertical = 2
+rect_min_size = Vector2( 300, 80 )
+mouse_default_cursor_shape = 2
+text = "Main Menu"
+
+[node name="SafeZoneArea" parent="." instance=ExtResource( 4 )]
+zoneDamage = 30.0
+
+[node name="SpawnTimer" type="Timer" parent="."]
+one_shot = true
+autostart = true
+
+[node name="Music" type="AudioStreamPlayer" parent="."]
+stream = ExtResource( 5 )
+volume_db = -3.0
+autoplay = true
+mix_target = 1
+bus = "Music"
+
+[node name="PlayerCam" type="Camera2D" parent="."]
+current = true
+zoom = Vector2( 2.2, 2.2 )
+process_mode = 0
+smoothing_enabled = true
+smoothing_speed = 12.0
+drag_margin_left = 0.3
+drag_margin_top = 0.3
+drag_margin_right = 0.3
+drag_margin_bottom = 0.3
+editor_draw_drag_margin = true
+__meta__ = {
+"_editor_description_": ""
+}
+
+[connection signal="button_up" from="CanvasLayer/PauseMenu/VBoxContainer/Resume" to="CanvasLayer/PauseMenu" method="_on_Resume_button_up"]
+[connection signal="button_up" from="CanvasLayer/PauseMenu/VBoxContainer/Main Menu" to="CanvasLayer/PauseMenu" method="_on_Main_Menu_button_up"]
+[connection signal="timeout" from="SpawnTimer" to="." method="_on_Timer_timeout"]
+
+[editable path="SafeZoneArea"]

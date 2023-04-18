@@ -1,0 +1,22 @@
+[gd_scene load_steps=5 format=2]
+
+[ext_resource path="res://Scenes/Abstracts/Bullet.tscn" type="PackedScene" id=1]
+[ext_resource path="res://Assets/Arts/laserBlue01.png" type="Texture" id=2]
+[ext_resource path="res://Scripts/Actors/Bullets/NailBullet.gd" type="Script" id=3]
+
+[sub_resource type="CircleShape2D" id=1]
+radius = 4.33653
+
+[node name="NailBullet" instance=ExtResource( 1 )]
+script = ExtResource( 3 )
+length_duration = 6.2
+damage = 45.0
+travelSpeed = 4000.0
+
+[node name="Sprite" parent="." index="0"]
+rotation = 1.5708
+texture = ExtResource( 2 )
+
+[node name="CollisionShape2D" parent="." index="1"]
+position = Vector2( 23.1461, 0 )
+shape = SubResource( 1 )

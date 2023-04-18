@@ -1,0 +1,530 @@
+[gd_scene load_steps=9 format=2]
+
+[ext_resource path="res://Scripts/SafeZoneArea.gd" type="Script" id=1]
+[ext_resource path="res://Assets/Fonts/ALGER.TTF" type="DynamicFontData" id=2]
+
+[sub_resource type="CircleShape2D" id=7]
+radius = 4800.0
+
+[sub_resource type="Animation" id=2]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/path = NodePath("Label:custom_constants/shadow_offset_x")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ -12 ]
+}
+tracks/1/type = "value"
+tracks/1/path = NodePath("Label:modulate")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ Color( 1, 1, 1, 1 ) ]
+}
+tracks/2/type = "value"
+tracks/2/path = NodePath("Border/Right/ColorRect8:color")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ Color( 0.831373, 0.529412, 0.121569, 0 ) ]
+}
+tracks/3/type = "value"
+tracks/3/path = NodePath("Border/Left/ColorRect8:color")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ Color( 0.831373, 0.529412, 0.121569, 0 ) ]
+}
+tracks/4/type = "value"
+tracks/4/path = NodePath("Border/Bottom/ColorRect8:color")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ Color( 0.831373, 0.529412, 0.121569, 0 ) ]
+}
+tracks/5/type = "value"
+tracks/5/path = NodePath("Border/Top/ColorRect8:color")
+tracks/5/interp = 1
+tracks/5/loop_wrap = true
+tracks/5/imported = false
+tracks/5/enabled = true
+tracks/5/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ Color( 0.831373, 0.529412, 0.121569, 0 ) ]
+}
+tracks/6/type = "value"
+tracks/6/path = NodePath("Label:visible")
+tracks/6/interp = 1
+tracks/6/loop_wrap = true
+tracks/6/imported = false
+tracks/6/enabled = true
+tracks/6/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 1,
+"values": [ false ]
+}
+tracks/7/type = "value"
+tracks/7/path = NodePath("Border:visible")
+tracks/7/interp = 1
+tracks/7/loop_wrap = true
+tracks/7/imported = false
+tracks/7/enabled = true
+tracks/7/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 1,
+"values": [ false ]
+}
+tracks/8/type = "value"
+tracks/8/path = NodePath("Border:modulate")
+tracks/8/interp = 1
+tracks/8/loop_wrap = true
+tracks/8/imported = false
+tracks/8/enabled = true
+tracks/8/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ Color( 1, 1, 1, 0.25098 ) ]
+}
+
+[sub_resource type="Animation" id=3]
+resource_name = "RadiationLabelAnim"
+length = 2.0
+loop = true
+step = 0.05
+tracks/0/type = "value"
+tracks/0/path = NodePath("Label:custom_constants/shadow_offset_x")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 0.5, 1, 1.5, 2 ),
+"transitions": PoolRealArray( -2, -2, -2, -2, -2 ),
+"update": 0,
+"values": [ 0, 5, 0, -5, 0 ]
+}
+tracks/1/type = "value"
+tracks/1/path = NodePath("Label:modulate")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/keys = {
+"times": PoolRealArray( 0, 1, 2 ),
+"transitions": PoolRealArray( 0.5, 0.5, 1 ),
+"update": 0,
+"values": [ Color( 1, 1, 1, 1 ), Color( 1, 1, 1, 0 ), Color( 1, 1, 1, 1 ) ]
+}
+tracks/2/type = "value"
+tracks/2/path = NodePath("Border/Right/ColorRect8:color")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/keys = {
+"times": PoolRealArray( 0, 1, 2 ),
+"transitions": PoolRealArray( -2, -2, -2 ),
+"update": 0,
+"values": [ Color( 0.831373, 0.529412, 0.121569, 0 ), Color( 0.831373, 0.529412, 0.121569, 0.27451 ), Color( 0.831373, 0.529412, 0.121569, 0 ) ]
+}
+tracks/3/type = "value"
+tracks/3/path = NodePath("Border/Left/ColorRect8:color")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/keys = {
+"times": PoolRealArray( 0, 1, 2 ),
+"transitions": PoolRealArray( -2, -2, -2 ),
+"update": 0,
+"values": [ Color( 0.831373, 0.529412, 0.121569, 0 ), Color( 0.831373, 0.529412, 0.121569, 0.27451 ), Color( 0.831373, 0.529412, 0.121569, 0 ) ]
+}
+tracks/4/type = "value"
+tracks/4/path = NodePath("Border/Bottom/ColorRect8:color")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/keys = {
+"times": PoolRealArray( 0, 1, 2 ),
+"transitions": PoolRealArray( -2, -2, -2 ),
+"update": 0,
+"values": [ Color( 0.831373, 0.529412, 0.121569, 0 ), Color( 0.831373, 0.529412, 0.121569, 0.27451 ), Color( 0.831373, 0.529412, 0.121569, 0 ) ]
+}
+tracks/5/type = "value"
+tracks/5/path = NodePath("Border/Top/ColorRect8:color")
+tracks/5/interp = 1
+tracks/5/loop_wrap = true
+tracks/5/imported = false
+tracks/5/enabled = true
+tracks/5/keys = {
+"times": PoolRealArray( 0, 1, 2 ),
+"transitions": PoolRealArray( -2, -2, -2 ),
+"update": 0,
+"values": [ Color( 0.831373, 0.529412, 0.121569, 0 ), Color( 0.831373, 0.529412, 0.121569, 0.27451 ), Color( 0.831373, 0.529412, 0.121569, 0 ) ]
+}
+tracks/6/type = "value"
+tracks/6/path = NodePath("Label:visible")
+tracks/6/interp = 1
+tracks/6/loop_wrap = true
+tracks/6/imported = false
+tracks/6/enabled = true
+tracks/6/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 1,
+"values": [ true ]
+}
+tracks/7/type = "value"
+tracks/7/path = NodePath("Border:visible")
+tracks/7/interp = 1
+tracks/7/loop_wrap = true
+tracks/7/imported = false
+tracks/7/enabled = true
+tracks/7/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 1,
+"values": [ true ]
+}
+tracks/8/type = "value"
+tracks/8/path = NodePath("Border:modulate")
+tracks/8/interp = 1
+tracks/8/loop_wrap = true
+tracks/8/imported = false
+tracks/8/enabled = true
+tracks/8/keys = {
+"times": PoolRealArray( 0, 1, 2 ),
+"transitions": PoolRealArray( -2, -2, -2 ),
+"update": 0,
+"values": [ Color( 1, 1, 1, 0 ), Color( 1, 1, 1, 0.176471 ), Color( 1, 1, 1, 0 ) ]
+}
+
+[sub_resource type="DynamicFont" id=4]
+size = 38
+font_data = ExtResource( 2 )
+
+[sub_resource type="OpenSimplexNoise" id=5]
+seed = 1
+octaves = 4
+period = 9.6
+persistence = 1.0
+lacunarity = 4.0
+
+[sub_resource type="NoiseTexture" id=6]
+noise = SubResource( 5 )
+
+[node name="SafeZoneArea" type="Area2D"]
+monitoring = false
+monitorable = false
+script = ExtResource( 1 )
+zoneDamage = 35.0
+damageSpeed = 0.8
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+visible = false
+shape = SubResource( 7 )
+
+[node name="DamageTimer" type="Timer" parent="."]
+wait_time = 0.8
+one_shot = true
+autostart = true
+
+[node name="CanvasLayer" type="CanvasLayer" parent="."]
+
+[node name="Control" type="Control" parent="CanvasLayer"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="CanvasLayer/Control"]
+autoplay = "RadiationLabelAnim"
+anims/RESET = SubResource( 2 )
+anims/RadiationLabelAnim = SubResource( 3 )
+
+[node name="Label" type="Label" parent="CanvasLayer/Control"]
+visible = false
+anchor_left = 0.5
+anchor_top = 0.0574074
+anchor_right = 0.5
+anchor_bottom = 0.0574074
+margin_left = -422.0
+margin_top = 29.0
+margin_right = 422.0
+margin_bottom = 72.0
+grow_horizontal = 2
+custom_colors/font_color = Color( 0.945098, 1, 0, 1 )
+custom_colors/font_outline_modulate = Color( 0.521569, 0.0745098, 0.0745098, 1 )
+custom_colors/font_color_shadow = Color( 0.521569, 0.0745098, 0.0745098, 1 )
+custom_constants/shadow_offset_x = -12
+custom_constants/shadow_as_outline = 30
+custom_fonts/font = SubResource( 4 )
+text = "Radiation Alert!!! Fall back to Safe Zone"
+align = 1
+uppercase = true
+__meta__ = {
+"_edit_use_anchors_": true
+}
+
+[node name="Border" type="Control" parent="CanvasLayer/Control"]
+visible = false
+modulate = Color( 1, 1, 1, 0.25098 )
+anchor_right = 1.0
+anchor_bottom = 1.0
+__meta__ = {
+"_edit_use_anchors_": true
+}
+
+[node name="Top" type="Control" parent="CanvasLayer/Control/Border"]
+anchor_bottom = 1.0
+margin_right = 56.0
+margin_bottom = 840.0
+rect_rotation = 90.0
+rect_scale = Vector2( 1, -1 )
+
+[node name="ColorRect" type="ColorRect" parent="CanvasLayer/Control/Border/Top"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+color = Color( 0.831373, 0.529412, 0.121569, 0.411765 )
+
+[node name="ColorRect2" type="ColorRect" parent="CanvasLayer/Control/Border/Top"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_right = -9.0
+color = Color( 0.831373, 0.529412, 0.121569, 0.411765 )
+
+[node name="ColorRect3" type="ColorRect" parent="CanvasLayer/Control/Border/Top"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_right = -24.0
+color = Color( 0.831373, 0.529412, 0.121569, 0.411765 )
+
+[node name="ColorRect4" type="ColorRect" parent="CanvasLayer/Control/Border/Top"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_right = -34.0
+color = Color( 0.831373, 0.529412, 0.121569, 0.411765 )
+
+[node name="ColorRect5" type="ColorRect" parent="CanvasLayer/Control/Border/Top"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_right = -40.0
+color = Color( 0.831373, 0.529412, 0.121569, 0.411765 )
+
+[node name="ColorRect6" type="ColorRect" parent="CanvasLayer/Control/Border/Top"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_right = -45.0
+color = Color( 0.831373, 0.529412, 0.121569, 0.411765 )
+
+[node name="ColorRect7" type="ColorRect" parent="CanvasLayer/Control/Border/Top"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_right = -52.0
+color = Color( 0.831373, 0.529412, 0.121569, 0.411765 )
+
+[node name="ColorRect8" type="ColorRect" parent="CanvasLayer/Control/Border/Top"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+color = Color( 0.831373, 0.529412, 0.121569, 0 )
+
+[node name="Bottom" type="Control" parent="CanvasLayer/Control/Border"]
+anchor_bottom = 1.0
+margin_top = 1080.0
+margin_right = 56.0
+margin_bottom = 1920.0
+rect_rotation = 90.0
+rect_scale = Vector2( -1, -1 )
+
+[node name="ColorRect" type="ColorRect" parent="CanvasLayer/Control/Border/Bottom"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+color = Color( 0.831373, 0.529412, 0.121569, 0.411765 )
+
+[node name="ColorRect2" type="ColorRect" parent="CanvasLayer/Control/Border/Bottom"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_right = -9.0
+color = Color( 0.831373, 0.529412, 0.121569, 0.411765 )
+
+[node name="ColorRect3" type="ColorRect" parent="CanvasLayer/Control/Border/Bottom"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_right = -24.0
+color = Color( 0.831373, 0.529412, 0.121569, 0.411765 )
+
+[node name="ColorRect4" type="ColorRect" parent="CanvasLayer/Control/Border/Bottom"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_right = -34.0
+color = Color( 0.831373, 0.529412, 0.121569, 0.411765 )
+
+[node name="ColorRect5" type="ColorRect" parent="CanvasLayer/Control/Border/Bottom"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_right = -40.0
+color = Color( 0.831373, 0.529412, 0.121569, 0.411765 )
+
+[node name="ColorRect6" type="ColorRect" parent="CanvasLayer/Control/Border/Bottom"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_right = -45.0
+color = Color( 0.831373, 0.529412, 0.121569, 0.411765 )
+
+[node name="ColorRect7" type="ColorRect" parent="CanvasLayer/Control/Border/Bottom"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_right = -52.0
+color = Color( 0.831373, 0.529412, 0.121569, 0.411765 )
+
+[node name="ColorRect8" type="ColorRect" parent="CanvasLayer/Control/Border/Bottom"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+color = Color( 0.831373, 0.529412, 0.121569, 0 )
+
+[node name="Left" type="Control" parent="CanvasLayer/Control/Border"]
+anchor_bottom = 1.0
+margin_right = 56.0
+
+[node name="ColorRect" type="ColorRect" parent="CanvasLayer/Control/Border/Left"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+color = Color( 0.831373, 0.529412, 0.121569, 0.411765 )
+
+[node name="ColorRect2" type="ColorRect" parent="CanvasLayer/Control/Border/Left"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_right = -9.0
+color = Color( 0.831373, 0.529412, 0.121569, 0.411765 )
+
+[node name="ColorRect3" type="ColorRect" parent="CanvasLayer/Control/Border/Left"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_right = -24.0
+color = Color( 0.831373, 0.529412, 0.121569, 0.411765 )
+
+[node name="ColorRect4" type="ColorRect" parent="CanvasLayer/Control/Border/Left"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_right = -34.0
+color = Color( 0.831373, 0.529412, 0.121569, 0.411765 )
+
+[node name="ColorRect5" type="ColorRect" parent="CanvasLayer/Control/Border/Left"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_right = -40.0
+color = Color( 0.831373, 0.529412, 0.121569, 0.411765 )
+
+[node name="ColorRect6" type="ColorRect" parent="CanvasLayer/Control/Border/Left"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_right = -45.0
+color = Color( 0.831373, 0.529412, 0.121569, 0.411765 )
+
+[node name="ColorRect7" type="ColorRect" parent="CanvasLayer/Control/Border/Left"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_right = -52.0
+color = Color( 0.831373, 0.529412, 0.121569, 0.411765 )
+
+[node name="ColorRect8" type="ColorRect" parent="CanvasLayer/Control/Border/Left"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+color = Color( 0.831373, 0.529412, 0.121569, 0 )
+
+[node name="Right" type="Control" parent="CanvasLayer/Control/Border"]
+anchor_left = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_right = 56.0
+rect_scale = Vector2( -1, 1 )
+
+[node name="ColorRect" type="ColorRect" parent="CanvasLayer/Control/Border/Right"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+color = Color( 0.831373, 0.529412, 0.121569, 0.411765 )
+
+[node name="ColorRect2" type="ColorRect" parent="CanvasLayer/Control/Border/Right"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_right = -9.0
+color = Color( 0.831373, 0.529412, 0.121569, 0.411765 )
+
+[node name="ColorRect3" type="ColorRect" parent="CanvasLayer/Control/Border/Right"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_right = -24.0
+color = Color( 0.831373, 0.529412, 0.121569, 0.411765 )
+
+[node name="ColorRect4" type="ColorRect" parent="CanvasLayer/Control/Border/Right"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_right = -34.0
+color = Color( 0.831373, 0.529412, 0.121569, 0.411765 )
+
+[node name="ColorRect5" type="ColorRect" parent="CanvasLayer/Control/Border/Right"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_right = -40.0
+color = Color( 0.831373, 0.529412, 0.121569, 0.411765 )
+
+[node name="ColorRect6" type="ColorRect" parent="CanvasLayer/Control/Border/Right"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_right = -45.0
+color = Color( 0.831373, 0.529412, 0.121569, 0.411765 )
+
+[node name="ColorRect7" type="ColorRect" parent="CanvasLayer/Control/Border/Right"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_right = -52.0
+color = Color( 0.831373, 0.529412, 0.121569, 0.411765 )
+
+[node name="ColorRect8" type="ColorRect" parent="CanvasLayer/Control/Border/Right"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+color = Color( 0.831373, 0.529412, 0.121569, 0 )
+
+[node name="Light2D" type="Light2D" parent="."]
+texture = SubResource( 6 )
+texture_scale = 40.84
+color = Color( 0.980392, 0.85098, 0.341176, 1 )
+energy = 1.3
+range_height = 378.1
+range_item_cull_mask = 2
+
+[node name="Boundary" type="Position2D" parent="."]
+
+[connection signal="body_entered" from="." to="." method="_on_SafeZoneArea_body_entered"]
+[connection signal="body_exited" from="." to="." method="_on_SafeZoneArea_body_exited"]
+[connection signal="timeout" from="DamageTimer" to="." method="_on_Timer_timeout"]
