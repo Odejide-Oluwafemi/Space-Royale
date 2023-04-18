@@ -1,0 +1,49 @@
+[gd_scene load_steps=4 format=2]
+
+[ext_resource path="res://Scenes/Abstracts/Ship.tscn" type="PackedScene" id=1]
+[ext_resource path="res://Scripts/Actors/NightHawk.gd" type="Script" id=2]
+[ext_resource path="res://Assets/Arts/NightHawk.png" type="Texture" id=3]
+
+[node name="NightHawk" instance=ExtResource( 1 )]
+script = ExtResource( 2 )
+rarity = 1
+max_durability = 4500.0
+mass = 10.0
+slow_radius = 380.0
+max_upgrade_level = 5
+
+[node name="Sprite" parent="." index="0"]
+scale = Vector2( 2.45, 2.45 )
+texture = ExtResource( 3 )
+
+[node name="Booster" parent="Sprite" index="0"]
+position = Vector2( -28.1633, 0 )
+scale = Vector2( 0.5, 0.8 )
+
+[node name="Explosion" parent="Sprite" index="1"]
+position = Vector2( -4.4898, 0 )
+scale = Vector2( 0.25, 0.25 )
+
+[node name="CollisionShape2D" parent="." index="1"]
+visible = false
+polygon = PoolVector2Array( -32, -52, -24, -52, -8, -18, 2, -16, 15, -15, 36, -5, 36, 4, 17, 13, 1, 16, -7, 17, -24, 51, -32, 51, -33, 44, -26, 21, -30, 20, -37, 13, -36, -14, -30, -19, -26, -20, -31, -45 )
+
+[node name="BulletSpawnPoint" parent="." index="3"]
+position = Vector2( 54, 0 )
+
+[node name="FRONT(DELETE)" parent="BulletSpawnPoint" index="0"]
+position = Vector2( 19, 0 )
+scale = Vector2( 0.28, 0.28 )
+
+[node name="Marker" parent="Markers/SafeZoneMarkerAnchor" index="0"]
+position = Vector2( 146, 0 )
+scale = Vector2( 0.32, 0.32 )
+
+[node name="Armor" parent="Components" index="0"]
+max_armor = 8000.0
+regenerate_speed = 1.2
+regen_inactive_time = 5.0
+regen_value = 25.0
+
+[node name="Engine" parent="Components" index="1"]
+max_speed = 1100.0

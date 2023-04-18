@@ -1,0 +1,23 @@
+[gd_scene load_steps=6 format=2]
+
+[ext_resource path="res://Scenes/Abstracts/Weapon.tscn" type="PackedScene" id=1]
+[ext_resource path="res://Scripts/Actors/Weapons/GatlingGun.gd" type="Script" id=2]
+[ext_resource path="res://icon.png" type="Texture" id=3]
+[ext_resource path="res://Scenes/Bullets/NailBullet.tscn" type="PackedScene" id=4]
+[ext_resource path="res://Assets/Sounds/sfx_laser1.ogg" type="AudioStream" id=5]
+
+[node name="GatlingGun" instance=ExtResource( 1 )]
+script = ExtResource( 2 )
+bullet_scene = ExtResource( 4 )
+max_ammo_holdable = 1200
+magazine_size = 100
+ammoAtHand = 500
+firingRate = 0.09
+reloadSpeed = 3.4
+is_unlocked = true
+thumbnail = ExtResource( 3 )
+weapon_name = "Gatling Gun"
+
+[node name="ShootSound" parent="." index="2"]
+stream = ExtResource( 5 )
+bus = "GatlingGun"

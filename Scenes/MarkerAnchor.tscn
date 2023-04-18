@@ -1,0 +1,27 @@
+[gd_scene load_steps=3 format=2]
+
+[ext_resource path="res://icon.png" type="Texture" id=1]
+
+[sub_resource type="GDScript" id=1]
+script/source = "extends Position2D
+
+class_name MarkerAnchor
+
+export var offset: float = 100.0
+
+var target_pos: Vector2
+
+func _ready():
+	$Marker.global_position.x = offset
+
+func _process(_delta):
+	look_at(target_pos)
+"
+
+[node name="MarkerAnchor" type="Position2D"]
+script = SubResource( 1 )
+
+[node name="Marker" type="Sprite" parent="."]
+position = Vector2( 96, 0 )
+scale = Vector2( 0.2, 0.2 )
+texture = ExtResource( 1 )

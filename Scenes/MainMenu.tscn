@@ -1,0 +1,318 @@
+[gd_scene load_steps=9 format=2]
+
+[ext_resource path="res://Styles/UI.tres" type="Theme" id=1]
+[ext_resource path="res://icon.png" type="Texture" id=2]
+[ext_resource path="res://Assets/Fonts/COMIC.TTF" type="DynamicFontData" id=3]
+[ext_resource path="res://Scripts/MainMenu.gd" type="Script" id=4]
+
+[sub_resource type="DynamicFont" id=1]
+size = 180
+extra_spacing_top = -8
+extra_spacing_bottom = -3
+extra_spacing_char = -8
+font_data = ExtResource( 3 )
+
+[sub_resource type="DynamicFont" id=2]
+size = 27
+font_data = ExtResource( 3 )
+
+[sub_resource type="Animation" id=3]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/path = NodePath(".:rect_position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ Vector2( 0, 0 ) ]
+}
+tracks/1/type = "value"
+tracks/1/path = NodePath(".:anchor_left")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ 0.0 ]
+}
+tracks/2/type = "value"
+tracks/2/path = NodePath(".:anchor_top")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ 0.0 ]
+}
+tracks/3/type = "value"
+tracks/3/path = NodePath(".:anchor_right")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ 1.0 ]
+}
+tracks/4/type = "value"
+tracks/4/path = NodePath(".:anchor_bottom")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ 1.0 ]
+}
+tracks/5/type = "value"
+tracks/5/path = NodePath(".:margin_left")
+tracks/5/interp = 1
+tracks/5/loop_wrap = true
+tracks/5/imported = false
+tracks/5/enabled = true
+tracks/5/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 1,
+"values": [ 0.0 ]
+}
+tracks/6/type = "value"
+tracks/6/path = NodePath(".:margin_top")
+tracks/6/interp = 1
+tracks/6/loop_wrap = true
+tracks/6/imported = false
+tracks/6/enabled = true
+tracks/6/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 1,
+"values": [ 0.0 ]
+}
+tracks/7/type = "value"
+tracks/7/path = NodePath(".:margin_right")
+tracks/7/interp = 1
+tracks/7/loop_wrap = true
+tracks/7/imported = false
+tracks/7/enabled = true
+tracks/7/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 1,
+"values": [ 0.0 ]
+}
+tracks/8/type = "value"
+tracks/8/path = NodePath(".:margin_bottom")
+tracks/8/interp = 1
+tracks/8/loop_wrap = true
+tracks/8/imported = false
+tracks/8/enabled = true
+tracks/8/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 1,
+"values": [ 0.0 ]
+}
+
+[sub_resource type="Animation" id=4]
+resource_name = "TransitionIn(Hangar)"
+length = 0.5
+tracks/0/type = "value"
+tracks/0/path = NodePath(".:rect_position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 0.5 ),
+"transitions": PoolRealArray( -2, -2 ),
+"update": 0,
+"values": [ Vector2( 0, 0 ), Vector2( -1920, 0 ) ]
+}
+tracks/1/type = "method"
+tracks/1/path = NodePath(".")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/keys = {
+"times": PoolRealArray( 0.5 ),
+"transitions": PoolRealArray( 1 ),
+"values": [ {
+"args": [ "res://Scenes/Hangar.tscn" ],
+"method": "transition_to"
+} ]
+}
+
+[node name="MainMenu" type="Control"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+theme = ExtResource( 1 )
+script = ExtResource( 4 )
+__meta__ = {
+"_edit_lock_": true
+}
+
+[node name="VBoxContainer" type="VBoxContainer" parent="."]
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_left = 10.0
+margin_top = 10.0
+margin_right = -10.0
+margin_bottom = -10.0
+
+[node name="GameTitleContainer" type="CenterContainer" parent="VBoxContainer"]
+margin_right = 1900.0
+margin_bottom = 368.0
+size_flags_vertical = 3
+
+[node name="GameTitle" type="Label" parent="VBoxContainer/GameTitleContainer"]
+margin_left = 567.0
+margin_top = 4.0
+margin_right = 1333.0
+margin_bottom = 363.0
+custom_constants/line_spacing = -123
+custom_fonts/font = SubResource( 1 )
+text = "Space
+  Royale"
+valign = 1
+uppercase = true
+
+[node name="Info" type="HBoxContainer" parent="VBoxContainer"]
+margin_top = 372.0
+margin_right = 1900.0
+margin_bottom = 740.0
+size_flags_vertical = 3
+alignment = 1
+
+[node name="Socials" type="VBoxContainer" parent="VBoxContainer/Info"]
+margin_right = 120.0
+margin_bottom = 368.0
+rect_min_size = Vector2( 120, 0 )
+custom_constants/separation = 52
+alignment = 1
+
+[node name="Fb" type="TextureButton" parent="VBoxContainer/Info/Socials"]
+margin_left = 20.0
+margin_top = 78.0
+margin_right = 100.0
+margin_bottom = 158.0
+rect_min_size = Vector2( 80, 80 )
+size_flags_horizontal = 4
+size_flags_vertical = 4
+texture_normal = ExtResource( 2 )
+expand = true
+
+[node name="Twitter" type="TextureButton" parent="VBoxContainer/Info/Socials"]
+margin_left = 20.0
+margin_top = 210.0
+margin_right = 100.0
+margin_bottom = 290.0
+rect_min_size = Vector2( 80, 80 )
+size_flags_horizontal = 4
+size_flags_vertical = 4
+texture_normal = ExtResource( 2 )
+expand = true
+
+[node name="Controls" type="Label" parent="VBoxContainer/Info"]
+margin_left = 124.0
+margin_top = 26.0
+margin_right = 1716.0
+margin_bottom = 341.0
+size_flags_horizontal = 3
+text = "Controls:
+w - Accelerate
+s - Decelerate / Reverse
+LMB - Shoot Primary Weapon
+RMB - Fire Secondary Weapon
+MMB - Activate Ship's Special"
+align = 1
+valign = 1
+uppercase = true
+
+[node name="Buttons" type="VBoxContainer" parent="VBoxContainer/Info"]
+margin_left = 1720.0
+margin_right = 1900.0
+margin_bottom = 368.0
+rect_min_size = Vector2( 120, 0 )
+custom_constants/separation = 58
+alignment = 1
+
+[node name="Hanger" type="Button" parent="VBoxContainer/Info/Buttons"]
+margin_top = 36.0
+margin_right = 180.0
+margin_bottom = 96.0
+rect_min_size = Vector2( 180, 60 )
+text = "Hanger"
+
+[node name="Settings" type="Button" parent="VBoxContainer/Info/Buttons"]
+margin_top = 154.0
+margin_right = 180.0
+margin_bottom = 214.0
+rect_min_size = Vector2( 180, 60 )
+text = "Settings"
+
+[node name="Credits" type="Button" parent="VBoxContainer/Info/Buttons"]
+margin_top = 272.0
+margin_right = 180.0
+margin_bottom = 332.0
+rect_min_size = Vector2( 180, 60 )
+text = "Credits"
+
+[node name="PlayContainer" type="VBoxContainer" parent="VBoxContainer"]
+margin_top = 744.0
+margin_right = 1900.0
+margin_bottom = 1060.0
+custom_constants/separation = 8
+alignment = 1
+
+[node name="Play" type="Button" parent="VBoxContainer/PlayContainer"]
+margin_left = 800.0
+margin_right = 1100.0
+margin_bottom = 100.0
+rect_min_size = Vector2( 300, 100 )
+size_flags_horizontal = 4
+custom_fonts/font = SubResource( 2 )
+text = "Play (Practice VS AI)"
+
+[node name="Host" type="Button" parent="VBoxContainer/PlayContainer"]
+margin_left = 800.0
+margin_top = 108.0
+margin_right = 1100.0
+margin_bottom = 208.0
+rect_min_size = Vector2( 300, 100 )
+size_flags_horizontal = 4
+custom_fonts/font = SubResource( 2 )
+text = "Host Game"
+
+[node name="Join" type="Button" parent="VBoxContainer/PlayContainer"]
+margin_left = 800.0
+margin_top = 216.0
+margin_right = 1100.0
+margin_bottom = 316.0
+rect_min_size = Vector2( 300, 100 )
+size_flags_horizontal = 4
+custom_fonts/font = SubResource( 2 )
+text = "Join Game"
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+anims/RESET = SubResource( 3 )
+anims/TransitionIn(Hangar) = SubResource( 4 )
+
+[connection signal="button_up" from="VBoxContainer/Info/Buttons/Hanger" to="." method="_on_Hanger_button_up"]
+[connection signal="button_up" from="VBoxContainer/PlayContainer/Play" to="." method="_on_Play_button_up"]
+[connection signal="button_up" from="VBoxContainer/PlayContainer/Host" to="." method="_on_Host_button_up"]
+[connection signal="button_up" from="VBoxContainer/PlayContainer/Join" to="." method="_on_Join_button_up"]

@@ -1,0 +1,50 @@
+[gd_scene load_steps=4 format=2]
+
+[ext_resource path="res://Scenes/Abstracts/Ship.tscn" type="PackedScene" id=1]
+[ext_resource path="res://Scripts/Actors/Ships/BlueDevil.gd" type="Script" id=2]
+[ext_resource path="res://Assets/Arts/BlueDevil.png" type="Texture" id=3]
+
+[node name="BlueDevil" instance=ExtResource( 1 )]
+script = ExtResource( 2 )
+is_unlocked = true
+max_durability = 4500.0
+mass = 12.0
+slow_radius = 300.0
+max_upgrade_level = 6
+
+[node name="Sprite" parent="." index="0"]
+scale = Vector2( 2.3, 2.3 )
+texture = ExtResource( 3 )
+
+[node name="Booster" parent="Sprite" index="0"]
+position = Vector2( -21.3043, 0 )
+scale = Vector2( 0.4, 0.7 )
+
+[node name="Explosion" parent="Sprite" index="1"]
+frame = 10
+
+[node name="CollisionShape2D" parent="." index="1"]
+visible = false
+rotation = 1.5708
+polygon = PoolVector2Array( -23.9999, 34.0001, -25.9999, 16.0001, -26, 9.00009, -24, -3.99991, -22.0001, -13.9999, -12.0001, -14, -11.0001, -30, -4.00016, -43, 2.99984, -43, 10.9999, -31, 11, -13, 22, -13.0001, 25, -4.00009, 26, 8.99991, 26.0001, 15.9999, 24.0001, 33.9999, 21.0001, 33.9999, 15.0001, 15.9999, 6.00008, 23, -5.99992, 23, -13.9999, 16.0001, -20.9999, 34.0001 )
+
+[node name="BulletSpawnPoint" parent="." index="3"]
+position = Vector2( 62, 0 )
+
+[node name="FRONT(DELETE)" parent="BulletSpawnPoint" index="0"]
+position = Vector2( 16, 0 )
+scale = Vector2( 0.17, 0.17 )
+
+[node name="Marker" parent="Markers/SafeZoneMarkerAnchor" index="0"]
+self_modulate = Color( 0.0705882, 0.780392, 0.0470588, 1 )
+position = Vector2( 128, 0 )
+scale = Vector2( 0.2, 0.2 )
+
+[node name="Armor" parent="Components" index="0"]
+max_armor = 6250.0
+regenerate_speed = 0.9
+regen_inactive_time = 3.0
+regen_value = 22.0
+
+[node name="Engine" parent="Components" index="1"]
+max_speed = 820.0

@@ -1,0 +1,59 @@
+[gd_scene load_steps=5 format=2]
+
+[ext_resource path="res://Scenes/Abstracts/Ship.tscn" type="PackedScene" id=1]
+[ext_resource path="res://Scripts/Abstracts/AI.gd" type="Script" id=2]
+[ext_resource path="res://Assets/Arts/BlueDevil.png" type="Texture" id=3]
+
+[sub_resource type="CircleShape2D" id=1]
+radius = 3670.0
+
+[node name="AI_1" instance=ExtResource( 1 )]
+script = ExtResource( 2 )
+is_unlocked = true
+max_durability = 10.0
+mass = 5.0
+max_upgrade_level = 3
+
+[node name="Sprite" parent="." index="0"]
+scale = Vector2( 2, 2 )
+texture = ExtResource( 3 )
+
+[node name="Booster" parent="Sprite" index="0"]
+position = Vector2( -28, 0 )
+scale = Vector2( 0.6, 1 )
+
+[node name="CollisionShape2D" parent="." index="1"]
+visible = false
+rotation = 1.5708
+polygon = PoolVector2Array( -20.9999, 30.0001, -20, -10.9999, -4.00013, -37, 2.99986, -38, 20, -12.0001, 24.0001, 14.9999, 21.0001, 30.9999, 5.00007, 20, -4.99993, 20 )
+
+[node name="BulletSpawnPoint" parent="." index="3"]
+position = Vector2( 63, 0 )
+
+[node name="FRONT(DELETE)" parent="BulletSpawnPoint" index="0"]
+visible = false
+position = Vector2( 11, 0 )
+
+[node name="Marker" parent="Markers/SafeZoneMarkerAnchor" index="0"]
+visible = false
+
+[node name="Armor" parent="Components" index="0"]
+max_armor = 10.0
+regenerate_speed = 2.8
+regen_inactive_time = 4.0
+regen_value = 50.0
+
+[node name="Engine" parent="Components" index="1"]
+max_speed = 490.0
+
+[node name="EnemyDetectionArea" type="Area2D" parent="." index="7"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="EnemyDetectionArea" index="0"]
+shape = SubResource( 1 )
+
+[node name="WanderTimer" type="Timer" parent="." index="8"]
+one_shot = true
+
+[connection signal="body_entered" from="EnemyDetectionArea" to="." method="_on_EnemyDetectionArea_body_entered"]
+[connection signal="body_exited" from="EnemyDetectionArea" to="." method="_on_EnemyDetectionArea_body_exited"]
+[connection signal="timeout" from="WanderTimer" to="." method="_on_WanderTimer_timeout"]
